@@ -1,6 +1,7 @@
 import random
 
 def createFullDeck():
+    #full deck with list size of 52
     final = []
     for i in range (10):
         for j in range (4):
@@ -21,7 +22,14 @@ def createPlusTen():
 
 fullDeck = createFullDeck()
 
-def dealCards(cardList):
+def popCards(cardList,defaultDeck):
+    if (cardList != []):
+        card = cardList.pop(random.randint(1,len(cardList)))
+    else:
+        card = defaultDeck.pop(random.randint(1,len(cardList)))
+    return cardList,card
+
+def dealCards(cardList,defaultDeck):
     deck = cardList
     dealerCard1 = deck.pop(random.randint(1,len(deck)))
     playerCard1 = deck.pop(random.randint(1,len(deck)))
@@ -58,17 +66,19 @@ def dealCards(cardList):
     else:
         return 0
 
+def runSimulation(defaultDeck):
+    return 42
 
 
 
 
 
 
-print(dealCards(fullDeck))
 
+runSimulation(createPlusTen());
 
-
-
+set1 = (1,2,3,4)
+print(set1[1])
 
 
 
