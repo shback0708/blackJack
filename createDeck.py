@@ -22,8 +22,13 @@ def createPlusDeck(plusNumber):
 def createMinusDeck(minusNumber):
     minusList = [2,3,4,5,6]
     final = createFullDeck()
-    for i in range (plusNumber):
-        final.append(plusList[random.randint(0,4)])
+    for i in range (abs(minusNumber)):
+        final.append(minusList[random.randint(0,4)])
     return final
 
+def createDeck(deckCount):
+    if (deckCount >= 0):
+        return createPlusDeck(deckCount)
+    else:
+        return createMinusDeck(deckCount)
 
