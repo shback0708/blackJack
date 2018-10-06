@@ -87,7 +87,7 @@ def dealCards(cardList,defaultDeck):
                 playerAceCount -= 1
             else:
                 print("player's sum got over 21 so he lost")
-                return -1, deck
+                return -1, deck, len(deck)
 
 
     while (dealerSum < 17):
@@ -104,7 +104,7 @@ def dealCards(cardList,defaultDeck):
                 dealerAceCount -= 1
             else:
                 print("dealer's sum got over 21 so he lost")
-                return 1, deck
+                return 1, deck,len(deck)
 
 
 
@@ -112,12 +112,14 @@ def dealCards(cardList,defaultDeck):
     print("player's sum is " + str(playerSum))
     print("dealer's sum is " + str(dealerSum))
 
+    #if player wins, return 1; f dealer wins return -1, draw return 0
+
     if (playerSum > dealerSum):
-        return 1,deck
+        return 1,deck,len(deck)
     elif (playerSum < dealerSum):
-        return -1,deck
+        return -1,deck,len(deck)
     else:
-        return 0,deck
+        return 0,deck,len(deck)
 
 print(dealCards(deck,deck))
 

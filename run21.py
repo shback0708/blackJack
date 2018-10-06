@@ -9,7 +9,7 @@ def runSimulation(deckCount,numberOfGames):
     defaultDeck = createDeck(deckCount)
     currentDeck = createDeck(deckCount)
     for i in range(numberOfGames): 
-        result,currentDeck = dealCards(currentDeck,defaultDeck)
+        result,currentDeck,decksize = dealCards(currentDeck,defaultDeck)
 
     return ((result + numberOfGames / 2) * 100) / numberOfGames
 
